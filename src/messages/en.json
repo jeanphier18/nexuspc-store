@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "siteName": "NEXUS PC",
+    "tagline": "High-performance hardware",
+    "description": "High-performance components and peripherals for builds without compromises."
+  },
+  "nav": {
+    "home": "Home",
+    "main": "Main navigation",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "cart": "Cart",
+    "shop": "Shop",
+    "deals": "Deals",
+    "guides": "Guides",
+    "support": "Support",
+    "categoriesLabel": "Categories",
+    "allProducts": "View full catalog",
+    "guidesCard": "Build guides",
+    "guidesCardBadge": "New",
+    "guidesCardDesc": "Pick every component with intent and no bottlenecks.",
+    "guidesCardCta": "Read guides",
+    "categories": {
+      "gpu": "Graphics cards",
+      "cpu": "Processors",
+      "motherboard": "Motherboards",
+      "ram": "Memory",
+      "storage": "Storage",
+      "psu": "Power supplies",
+      "cases": "Cases",
+      "monitors": "Monitors",
+      "peripherals": "Peripherals",
+      "cooling": "Cooling"
+    },
+    "account": "Account",
+    "compare": "Compare",
+    "skip": "Skip to content"
+  },
+  "footer": {
+    "blurb": "Components and peripherals curated for builds that accept no compromises. International shipping and real warranty.",
+    "columns": {
+      "shop": "Shop",
+      "learn": "Learn",
+      "support": "Support",
+      "company": "Company"
+    },
+    "links": {
+      "all": "Full catalog",
+      "deals": "Deals",
+      "compare": "Compare",
+      "guides": "Guides and builds",
+      "builds": "Recommended builds",
+      "contact": "Contact",
+      "shipping": "Shipping",
+      "returns": "Returns",
+      "warranty": "Warranty",
+      "about": "About us",
+      "account": "My account"
+    },
+    "trust": {
+      "shipping": "Insured international shipping",
+      "warranty": "24-month warranty",
+      "secure": "Secure encrypted payment",
+      "support": "Real technical support"
+    },
+    "rights": "All rights reserved.",
+    "legal": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    },
+    "notice": "Prices in USD. Products subject to availability. Images are illustrative and may not reflect the final product version."
+  },
+  "specs": {
+    "vram": "VRAM",
+    "tdp": "TDP",
+    "interface": "Interface",
+    "boost": "Boost clock",
+    "cores": "Cores",
+    "threads": "Threads",
+    "socket": "Socket",
+    "chipset": "Chipset",
+    "formFactor": "Form factor",
+    "memory": "Memory",
+    "capacity": "Capacity",
+    "speed": "Speed",
+    "latency": "Latency",
+    "read": "Read",
+    "write": "Write",
+    "wattage": "Wattage",
+    "efficiency": "Efficiency",
+    "modular": "Modularity",
+    "panel": "Panel",
+    "resolution": "Resolution",
+    "refresh": "Refresh rate",
+    "response": "Response time",
+    "size": "Size",
+    "connection": "Connection",
+    "type": "Type",
+    "noise": "Noise",
+    "rpm": "RPM",
+    "gpuLength": "Max GPU",
+    "moboSupport": "Motherboards",
+    "ports": "Ports",
+    "battery": "Battery",
+    "weight": "Weight"
+  },
+  "product": {
+    "new": "New",
+    "viewProduct": "View details",
+    "lowStock": "{count} left",
+    "concept": "Concept view",
+    "savings": "You save {amount}",
+    "specsTitle": "Specifications",
+    "specsNote": "Demo data based on manufacturer sheets.",
+    "compatibilityTitle": "Before you buy",
+    "compatibilityBody": "Check these points to make sure the part fits your build.",
+    "compatibilityNote": "Guidance derived from the product specifications.",
+    "reviewsTitle": "Reviews",
+    "reviewsCount": "{count, plural, one {# review} other {# reviews}}",
+    "reviewsNote": "Demo distribution.",
+    "relatedTitle": "You may also like",
+    "relatedCta": "See everything in {category}",
+    "trust": {
+      "shipping": "Insured international shipping",
+      "warranty": "24-month warranty",
+      "payment": "Encrypted secure payment"
+    },
+    "compatHints": {
+      "socket": "Confirm your motherboard socket.",
+      "tdp": "Keep power draw and cooling in mind.",
+      "cores": "More cores help with multitasking and creation.",
+      "formFactor": "Check that it fits your case.",
+      "memory": "Verify your motherboard memory type.",
+      "gpuLength": "Measure the clearance for the GPU.",
+      "wattage": "Work out your build's total draw.",
+      "interface": "Check your board or port version.",
+      "resolution": "Check your GPU can drive that resolution.",
+      "connection": "Check the ports on your device.",
+      "moboSupport": "Review the supported board formats.",
+      "size": "Confirm the available space.",
+      "speed": "Enable EXPO or XMP in the BIOS.",
+      "noise": "Depending on how quiet you want it.",
+      "weight": "Check the weight and grip you prefer.",
+      "type": "Check the format fits your setup.",
+      "panel": "Pick the panel for gaming, color or contrast.",
+      "refresh": "Make sure your GPU can push those Hz.",
+      "efficiency": "Better rating, less draw and heat.",
+      "modular": "Modular cables are easier to route.",
+      "capacity": "Work out how much space you need.",
+      "generic": "Check the full spec sheet before buying."
+    }
+  },
+  "cart": {
+    "add": "Add",
+    "added": "Added",
+    "outOfStock": "Sold out",
+    "empty": "Your cart is empty",
+    "emptyHint": "Browse the catalog and add components to get started.",
+    "decrease": "Remove one unit",
+    "increase": "Add one unit",
+    "remove": "Remove from cart",
+    "summary": "Summary",
+    "items": "{count, plural, =0 {No items} one {# item} other {# items}}",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingCalc": "Calculated at checkout",
+    "total": "Total",
+    "viewCart": "View cart",
+    "clear": "Clear cart",
+    "demoNote": "Backend-free demo: your cart is saved in this browser and payment is simulated.",
+    "stock": {
+      "in": "In stock",
+      "low": "Low stock",
+      "out": "Sold out"
+    },
+    "pageTitle": "Your cart",
+    "pageBody": "Review your build, adjust quantities and head to checkout.",
+    "checkoutNote": "Simulated checkout. Nothing will be charged.",
+    "emptyCta": "Browse catalog",
+    "checkout": "Go to checkout",
+    "quantity": "Quantity",
+    "continueShopping": "Keep shopping",
+    "unitPrice": "{price} each",
+    "freeShipping": "Free",
+    "freeShippingProgress": "{amount} away from free shipping",
+    "freeShippingUnlocked": "Your order ships free",
+    "taxes": "Tax (8%)",
+    "secureNote": "Simulated encrypted payment · No real charges",
+    "suggestedTitle": "Finish your build",
+    "suggestedBody": "The essentials that usually go with this kind of order.",
+    "removeLabel": "Remove {name} from cart"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Hardware for builds without bottlenecks",
+      "title": "Real power.",
+      "description": "Components and peripherals picked one by one. USD pricing, insured international shipping and a 24-month warranty.",
+      "primaryCta": "Browse catalog",
+      "secondaryCta": "See deals",
+      "microShipping": "International shipping",
+      "microWarranty": "24-month warranty",
+      "microSupport": "Technical support",
+      "featuredLabel": "Featured build",
+      "featuredCta": "View details",
+      "titleAccent": "No compromises."
+    },
+    "categories": {
+      "kicker": "01 · Catalog",
+      "title": "Find your part",
+      "body": "Ten categories with full specs, real stock and USD pricing.",
+      "count": "{count, plural, one {# product} other {# products}}",
+      "cta": "View category"
+    },
+    "featured": {
+      "kicker": "02 · Featured",
+      "title": "What we would build today",
+      "body": "GPU, CPU, storage and chassis: a balanced base to start building.",
+      "cta": "View full catalog"
+    },
+    "deals": {
+      "kicker": "03 · Deals",
+      "title": "Prices that will not wait",
+      "body": "Active discounts on available stock. The timer resets every Sunday.",
+      "countdownLabel": "Ends in",
+      "days": "days",
+      "hours": "hrs",
+      "minutes": "min",
+      "seconds": "sec",
+      "cta": "View all deals"
+    },
+    "guides": {
+      "kicker": "04 · Learn",
+      "title": "Buy with intent",
+      "body": "Short guides to understand what actually matters in each component.",
+      "cta": "View all guides",
+      "items": {
+        "gpu": {
+          "title": "How to pick your GPU",
+          "description": "VRAM, bus and power draw: what really changes the experience.",
+          "tag": "6 min"
+        },
+        "ram": {
+          "title": "DDR5 without myths",
+          "description": "Speed, latency and why the right kit matters more than the big number.",
+          "tag": "5 min"
+        },
+        "build": {
+          "title": "Your first build in 8 steps",
+          "description": "From socket to cable management, in order and without surprises.",
+          "tag": "9 min"
+        }
+      }
+    },
+    "reviews": {
+      "kicker": "05 · Trust",
+      "title": "Builds already running",
+      "body": "Reviews from customers who built with us.",
+      "items": {
+        "one": {
+          "quote": "I ordered CPU, motherboard and RAM the same day and everything arrived in 72 hours, perfectly packed.",
+          "name": "Diego M.",
+          "role": "Video editor · Mexico City"
+        },
+        "two": {
+          "quote": "Support helped me choose the PSU based on real power draw, not marketing.",
+          "name": "Lucía R.",
+          "role": "Developer · Madrid"
+        },
+        "three": {
+          "quote": "Third build I buy here. Clear prices and zero customs surprises.",
+          "name": "Andrés P.",
+          "role": "Streamer · Bogotá"
+        }
+      }
+    },
+    "newsletter": {
+      "kicker": "06 · List",
+      "title": "Deals before anyone else",
+      "body": "One email a month with drops, real discounts and guides. Nothing else.",
+      "placeholder": "you@email.com",
+      "cta": "Subscribe",
+      "success": "Done. We will let you know about the next deal.",
+      "privacy": "No spam. Unsubscribe anytime.",
+      "error": "Enter a valid email.",
+      "emailLabel": "Email address"
+    }
+  },
+  "catalog": {
+    "kicker": "Catalog",
+    "title": "All the hardware",
+    "body": "Demo products with full specs. Filter by brand, availability and price; the URL keeps your selection so you can share it.",
+    "searchLabel": "Search the catalog",
+    "searchPlaceholder": "Search by name or brand…",
+    "filters": "Filters",
+    "closeFilters": "Close filters",
+    "results": "{count, plural, =0 {No results} one {# product} other {# products}}",
+    "sort": "Sort",
+    "sortRelevance": "Relevance",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortRating": "Top rated",
+    "sortNew": "Newest",
+    "category": "Category",
+    "allCategories": "All",
+    "brand": "Brand",
+    "availability": "Availability",
+    "inStockOnly": "In stock only",
+    "price": "Price",
+    "priceAll": "Any price",
+    "priceUnder200": "Under $200",
+    "price200to500": "$200 – $500",
+    "price500to1000": "$500 – $1,000",
+    "priceOver1000": "Over $1,000",
+    "clearFilters": "Clear filters",
+    "activeFilters": "Active filters",
+    "removeFilter": "Remove filter: {filter}",
+    "empty": "No products match these filters",
+    "emptyHint": "Try removing a filter or searching for something else.",
+    "emptyCta": "Browse the full catalog",
+    "backToCatalog": "Full catalog",
+    "categoryBody": {
+      "gpu": "GPUs for 1440p and 4K, with VRAM, bus and power draw in plain sight.",
+      "cpu": "Processors for gaming, creation and heavy workloads.",
+      "motherboard": "Boards with socket, chipset and form factor up front.",
+      "ram": "DDR5 kits with real capacity, speed and latency.",
+      "storage": "Fast NVMe SSDs for system, games and projects.",
+      "psu": "Power supplies with efficiency, wattage and modularity.",
+      "cases": "Chassis with airflow and room for your GPU.",
+      "monitors": "Screens with resolution, refresh rate and response.",
+      "peripherals": "Keyboards, mice and audio to finish the setup.",
+      "cooling": "Air and liquid cooling, with noise and RPM."
+    },
+    "dealsPage": {
+      "kicker": "Deals",
+      "title": "Active deals",
+      "body": "Discounts on available stock. When the unit is gone, the deal is gone.",
+      "count": "{count, plural, one {# active deal} other {# active deals}}",
+      "cta": "Browse the full catalog",
+      "empty": "There are no active deals right now.",
+      "emptyHint": "Come back on Sunday: the timer resets with new price drops."
+    },
+    "updating": "Updating…"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "intro": "Complete your details to place the order.",
+    "demoBadge": "Demo",
+    "demoNote": "No real payment is processed and nothing will be shipped.",
+    "step": "Step {current} of {total}",
+    "steps": {
+      "contact": "Contact",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    },
+    "contact": {
+      "title": "Contact details",
+      "body": "We send the order confirmation and tracking here.",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "name": "Full name",
+      "namePlaceholder": "Ada Lovelace",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+1 555 000 0000"
+    },
+    "shipping": {
+      "title": "Shipping address",
+      "body": "We ship worldwide. Delivery times are estimates.",
+      "address": "Address",
+      "addressPlaceholder": "Street, number, unit",
+      "city": "City",
+      "cityPlaceholder": "City",
+      "postal": "Postal code",
+      "postalPlaceholder": "00000",
+      "country": "Country",
+      "countryPlaceholder": "Select a country",
+      "method": "Shipping method",
+      "standard": "Standard",
+      "standardEta": "5–8 business days",
+      "express": "Express",
+      "expressEta": "2–3 business days"
+    },
+    "payment": {
+      "title": "Payment",
+      "body": "Enter a test card. No charge will be made.",
+      "card": "Card number",
+      "cardPlaceholder": "4242 4242 4242 4242",
+      "holder": "Cardholder",
+      "holderPlaceholder": "Name on card",
+      "expiry": "Expiry",
+      "expiryPlaceholder": "MM/YY",
+      "cvc": "CVC",
+      "cvcPlaceholder": "123",
+      "cardLabel": "NEXUS · Demo",
+      "testCard": "Use 4242 4242 4242 4242 with any future date."
+    },
+    "actions": {
+      "continue": "Continue",
+      "back": "Back",
+      "pay": "Pay {amount}",
+      "processing": "Processing…"
+    },
+    "summary": {
+      "title": "Your order",
+      "edit": "Edit"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Enter a valid email.",
+      "card": "Enter the 16 digits on the card.",
+      "expiry": "Use the MM/YY format.",
+      "expiryPast": "This card has expired.",
+      "cvc": "Enter 3 digits."
+    },
+    "confirmation": {
+      "title": "Order confirmed",
+      "body": "Thanks, {name}. We sent the confirmation to {email}.",
+      "order": "Order {id}",
+      "delivery": "Estimated delivery: {date}",
+      "keepShopping": "Keep shopping",
+      "home": "Back home",
+      "note": "Demo order: nothing was charged and nothing will be shipped."
+    },
+    "empty": {
+      "title": "Your cart is empty",
+      "body": "Add components or peripherals before checking out.",
+      "cta": "Browse catalog"
+    }
+  },
+  "wishlist": {
+    "add": "Add to wishlist",
+    "remove": "Remove from wishlist",
+    "saved": "In your list",
+    "addShort": "Save",
+    "savedShort": "Saved"
+  },
+  "account": {
+    "title": "My account",
+    "intro": "Your orders, addresses and wishlist, stored only in this browser.",
+    "demoBadge": "Demo",
+    "profile": {
+      "guest": "Guest",
+      "guestEmail": "Complete an order to save your details.",
+      "memberSince": "Customer since {date}",
+      "orders": "Orders",
+      "wishlist": "Wishlist"
+    },
+    "orders": {
+      "title": "Orders",
+      "empty": "No orders yet",
+      "emptyBody": "Once you complete the demo checkout, the order will show up here.",
+      "cta": "Browse catalog",
+      "statusConfirmed": "Confirmed",
+      "items": "{count, plural, one {# item} other {# items}}",
+      "delivery": "Estimated delivery: {date}",
+      "shipTo": "Ships to",
+      "id": "Order {id}"
+    },
+    "address": {
+      "title": "Shipping address",
+      "empty": "Saved when you complete your first order.",
+      "recipient": "Ship to"
+    },
+    "wishlist": {
+      "title": "Wishlist",
+      "empty": "Your list is empty",
+      "emptyBody": "Tap the heart on any product to save it here.",
+      "emptyCta": "Browse products",
+      "count": "{count, plural, =0 {No products} one {# product} other {# products}}",
+      "remove": "Remove {name} from your list",
+      "addToCart": "Add to cart"
+    },
+    "data": {
+      "title": "Demo data",
+      "body": "This account has no login: orders, address and wishlist live in this browser.",
+      "clear": "Clear data",
+      "confirm": "Confirm clear",
+      "cleared": "Data cleared."
+    }
+  },
+  "compare": {
+    "title": "Compare",
+    "intro": "Pick up to four products and review the differences side by side.",
+    "slot": "Product {number}",
+    "addPlaceholder": "Add product",
+    "remove": "Remove {name} from comparison",
+    "viewProduct": "View product",
+    "emptyTitle": "Your comparison is empty",
+    "emptyBody": "Add products in the slots above or start with one of these comparisons.",
+    "presetsTitle": "Start with a comparison",
+    "presetGpu": "High-end GPUs",
+    "presetCpu": "CPUs for gaming",
+    "presetSsd": "2 TB NVMe SSDs",
+    "needTwo": "Add another product to see the difference table.",
+    "tableLabel": "Product comparison",
+    "price": "Price",
+    "rating": "Rating",
+    "stock": "Stock",
+    "specs": "Specifications",
+    "differencesNote": "Highlighted rows have different values.",
+    "bestPrice": "Best price",
+    "clear": "Clear comparison",
+    "cta": "Compare with others",
+    "browse": "Browse catalog",
+    "swipe": "Swipe to see all columns"
+  },
+  "guides": {
+    "title": "Guides",
+    "kicker": "Learn",
+    "intro": "Short, direct guides to choosing parts with judgment: what to look for, what to ignore and how much to spend.",
+    "count": "{count, plural, one {# guide} other {# guides}}",
+    "featured": "Featured guide",
+    "readTime": "{minutes} min",
+    "level": {
+      "entry": "Beginner",
+      "mid": "Intermediate",
+      "high": "Advanced"
+    },
+    "read": "Read guide",
+    "back": "All guides",
+    "toc": "In this guide",
+    "takeaway": "The short version",
+    "products": "Products in this guide",
+    "compareThem": "Compare these products",
+    "related": "Keep reading",
+    "published": "Published {date}",
+    "ctaTitle": "Rather see them side by side?",
+    "ctaBody": "The comparator puts up to four parts head to head and highlights the differences.",
+    "ctaButton": "Open comparator"
+  },
+  "support": {
+    "title": "Support",
+    "kicker": "We're here",
+    "intro": "Clear answers on shipping, returns, warranty and orders. No mazes.",
+    "status": "All systems operational",
+    "demo": "Demo: orders and the contact form are simulated.",
+    "quick": {
+      "orders": "Orders",
+      "shipping": "Shipping",
+      "returns": "Returns",
+      "warranty": "Warranty"
+    },
+    "track": {
+      "title": "Order tracking",
+      "body": "Your demo orders live in your account, only in this browser.",
+      "cta": "View my orders"
+    },
+    "policies": {
+      "shipping": {
+        "title": "Shipping"
+      },
+      "returns": {
+        "title": "Returns"
+      },
+      "warranty": {
+        "title": "Warranty"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "body": "What people ask us most, straight to the point.",
+      "groups": {
+        "orders": "Orders and shipping",
+        "returns": "Returns and warranty",
+        "payments": "Payments and security"
+      }
+    },
+    "form": {
+      "title": "Write to us",
+      "body": "Tell us what's going on and we'll reply within one business day.",
+      "name": "Name",
+      "email": "Email",
+      "topic": "Reason",
+      "order": "Order number",
+      "orderHint": "Optional, if you already bought.",
+      "message": "Message",
+      "messageHint": "Include model and symptoms for technical issues.",
+      "topics": {
+        "order": "Order status",
+        "shipping": "Shipping",
+        "returns": "Return",
+        "warranty": "Warranty or RMA",
+        "product": "Product question",
+        "other": "Other"
+      },
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Message received",
+      "successBody": "We'll reply to {email} within one business day. Reference: {ref}",
+      "again": "Send another message",
+      "required": "Complete this field.",
+      "emailInvalid": "Enter a valid email.",
+      "messageShort": "Tell us a bit more (at least 10 characters).",
+      "nameShort": "Enter your name.",
+      "errorTitle": "Check the highlighted fields."
+    },
+    "contact": {
+      "email": "soporte@nexuspc.demo",
+      "hours": "Mon–Fri · 9:00–18:00 (UTC−6)",
+      "response": "Reply within 24 h"
+    },
+    "still": {
+      "title": "Can't find your answer?",
+      "body": "Write to us and a person replies, not a bot.",
+      "cta": "Go to the form"
+    },
+    "quickLabel": "Quick links"
+  },
+  "notFound": {
+    "kicker": "Error 404",
+    "title": "This page drifted into the void.",
+    "body": "The link is broken or the product no longer exists. Head back home or keep exploring the catalog.",
+    "home": "Back home",
+    "shop": "Browse the store",
+    "hint": "If you followed one of our links, let us know in Support."
+  }
+}

@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "siteName": "NEXUS PC",
+    "tagline": "Hardware de alto rendimiento",
+    "description": "Componentes y periféricos de alto rendimiento para builds sin concesiones."
+  },
+  "nav": {
+    "home": "Inicio",
+    "main": "Navegación principal",
+    "menu": "Menú",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "cart": "Carrito",
+    "shop": "Tienda",
+    "deals": "Ofertas",
+    "guides": "Guías",
+    "support": "Soporte",
+    "categoriesLabel": "Categorías",
+    "allProducts": "Ver todo el catálogo",
+    "guidesCard": "Guías de build",
+    "guidesCardBadge": "Nuevo",
+    "guidesCardDesc": "Elige cada componente con criterio y sin cuellos de botella.",
+    "guidesCardCta": "Ver guías",
+    "categories": {
+      "gpu": "Tarjetas gráficas",
+      "cpu": "Procesadores",
+      "motherboard": "Motherboards",
+      "ram": "Memoria RAM",
+      "storage": "Almacenamiento",
+      "psu": "Fuentes",
+      "cases": "Gabinetes",
+      "monitors": "Monitores",
+      "peripherals": "Periféricos",
+      "cooling": "Refrigeración"
+    },
+    "account": "Mi cuenta",
+    "compare": "Comparar",
+    "skip": "Saltar al contenido"
+  },
+  "footer": {
+    "blurb": "Componentes y periféricos seleccionados para builds que no admiten concesiones. Envíos internacionales y garantía real.",
+    "columns": {
+      "shop": "Tienda",
+      "learn": "Aprender",
+      "support": "Soporte",
+      "company": "Empresa"
+    },
+    "links": {
+      "all": "Todo el catálogo",
+      "deals": "Ofertas",
+      "compare": "Comparar",
+      "guides": "Guías y builds",
+      "builds": "Builds recomendadas",
+      "contact": "Contacto",
+      "shipping": "Envíos",
+      "returns": "Devoluciones",
+      "warranty": "Garantía",
+      "about": "Sobre nosotros",
+      "account": "Mi cuenta"
+    },
+    "trust": {
+      "shipping": "Envío internacional asegurado",
+      "warranty": "Garantía de 24 meses",
+      "secure": "Pago seguro cifrado",
+      "support": "Soporte técnico real"
+    },
+    "rights": "Todos los derechos reservados.",
+    "legal": {
+      "terms": "Términos",
+      "privacy": "Privacidad",
+      "cookies": "Cookies"
+    },
+    "notice": "Precios en USD. Los productos están sujetos a disponibilidad. Las imágenes son ilustrativas y pueden no reflejar la versión final del producto."
+  },
+  "specs": {
+    "vram": "VRAM",
+    "tdp": "TDP",
+    "interface": "Interfaz",
+    "boost": "Boost",
+    "cores": "Núcleos",
+    "threads": "Hilos",
+    "socket": "Socket",
+    "chipset": "Chipset",
+    "formFactor": "Formato",
+    "memory": "Memoria",
+    "capacity": "Capacidad",
+    "speed": "Velocidad",
+    "latency": "Latencia",
+    "read": "Lectura",
+    "write": "Escritura",
+    "wattage": "Potencia",
+    "efficiency": "Certificación",
+    "modular": "Modularidad",
+    "panel": "Panel",
+    "resolution": "Resolución",
+    "refresh": "Refresco",
+    "response": "Respuesta",
+    "size": "Tamaño",
+    "connection": "Conexión",
+    "type": "Tipo",
+    "noise": "Ruido",
+    "rpm": "RPM",
+    "gpuLength": "GPU máx.",
+    "moboSupport": "Placas",
+    "ports": "Puertos",
+    "battery": "Batería",
+    "weight": "Peso"
+  },
+  "product": {
+    "new": "Nuevo",
+    "viewProduct": "Ver ficha",
+    "lowStock": "Quedan {count}",
+    "concept": "Vista conceptual",
+    "savings": "Ahorras {amount}",
+    "specsTitle": "Especificaciones",
+    "specsNote": "Datos de demostración basados en fichas de fabricante.",
+    "compatibilityTitle": "Antes de comprar",
+    "compatibilityBody": "Revisa estos puntos para asegurar que la pieza encaja con tu build.",
+    "compatibilityNote": "Datos orientativos a partir de las especificaciones del producto.",
+    "reviewsTitle": "Valoraciones",
+    "reviewsCount": "{count, plural, one {# valoración} other {# valoraciones}}",
+    "reviewsNote": "Distribución de demostración.",
+    "relatedTitle": "También te puede interesar",
+    "relatedCta": "Ver todo en {category}",
+    "trust": {
+      "shipping": "Envío internacional asegurado",
+      "warranty": "Garantía de 24 meses",
+      "payment": "Pago seguro cifrado"
+    },
+    "compatHints": {
+      "socket": "Confirma el socket de tu placa base.",
+      "tdp": "Ten en cuenta el consumo y la refrigeración.",
+      "cores": "Más núcleos ayudan en multitarea y creación.",
+      "formFactor": "Comprueba que cabe en tu caja.",
+      "memory": "Verifica el tipo de memoria de tu placa.",
+      "gpuLength": "Mide el espacio libre para la GPU.",
+      "wattage": "Calcula el consumo total de tu build.",
+      "interface": "Revisa la versión de tu placa o puerto.",
+      "resolution": "Comprueba que tu GPU rinde a esa resolución.",
+      "connection": "Comprueba los puertos de tu equipo.",
+      "moboSupport": "Revisa los formatos de placa admitidos.",
+      "size": "Confirma el espacio disponible.",
+      "speed": "Activa EXPO o XMP en la BIOS.",
+      "noise": "Según lo silencioso que quieras el equipo.",
+      "weight": "Revisa el peso y el agarre que prefieres.",
+      "type": "Comprueba que el formato encaje en tu setup.",
+      "panel": "Elige el panel según tu uso: juego, color o contraste.",
+      "refresh": "Asegúrate de que tu GPU puede mover esos Hz.",
+      "efficiency": "Mejor certificación, menos consumo y calor.",
+      "modular": "La modularidad facilita el cableado.",
+      "capacity": "Calcula cuánto espacio necesitas.",
+      "generic": "Revisa la ficha completa antes de comprar."
+    }
+  },
+  "cart": {
+    "add": "Añadir",
+    "added": "Añadido",
+    "outOfStock": "Agotado",
+    "empty": "Tu carrito está vacío",
+    "emptyHint": "Explora el catálogo y añade componentes para empezar.",
+    "decrease": "Quitar una unidad",
+    "increase": "Añadir una unidad",
+    "remove": "Quitar del carrito",
+    "summary": "Resumen",
+    "items": "{count, plural, =0 {Sin artículos} one {# artículo} other {# artículos}}",
+    "subtotal": "Subtotal",
+    "shipping": "Envío",
+    "shippingCalc": "Calculado en el checkout",
+    "total": "Total",
+    "viewCart": "Ver carrito",
+    "clear": "Vaciar carrito",
+    "demoNote": "Demo sin backend: tu carrito se guarda en este navegador y el pago es simulado.",
+    "stock": {
+      "in": "En stock",
+      "low": "Últimas unidades",
+      "out": "Agotado"
+    },
+    "pageTitle": "Tu carrito",
+    "pageBody": "Revisa tu build, ajusta cantidades y continúa al checkout.",
+    "checkoutNote": "Checkout simulado. No se cobrará nada.",
+    "emptyCta": "Ver catálogo",
+    "checkout": "Ir al checkout",
+    "quantity": "Cantidad",
+    "continueShopping": "Seguir comprando",
+    "unitPrice": "{price} c/u",
+    "freeShipping": "Gratis",
+    "freeShippingProgress": "Te faltan {amount} para el envío gratis",
+    "freeShippingUnlocked": "Tu pedido tiene envío gratis",
+    "taxes": "Impuestos (8 %)",
+    "secureNote": "Pago cifrado simulado · Sin cargos reales",
+    "suggestedTitle": "Completa tu build",
+    "suggestedBody": "Los imprescindibles que suelen acompañar a este tipo de pedido.",
+    "removeLabel": "Quitar {name} del carrito"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Hardware para builds sin cuellos de botella",
+      "title": "Potencia real.",
+      "description": "Componentes y periféricos seleccionados uno a uno. Precios en USD, envío internacional asegurado y garantía de 24 meses.",
+      "primaryCta": "Explorar catálogo",
+      "secondaryCta": "Ver ofertas",
+      "microShipping": "Envío internacional",
+      "microWarranty": "Garantía 24 meses",
+      "microSupport": "Soporte técnico",
+      "featuredLabel": "Build destacada",
+      "featuredCta": "Ver ficha",
+      "titleAccent": "Cero concesiones."
+    },
+    "categories": {
+      "kicker": "01 · Catálogo",
+      "title": "Encuentra tu pieza",
+      "body": "Diez categorías con especificaciones completas, stock real y precios en USD.",
+      "count": "{count, plural, one {# producto} other {# productos}}",
+      "cta": "Ver categoría"
+    },
+    "featured": {
+      "kicker": "02 · Destacados",
+      "title": "Lo que montaríamos hoy",
+      "body": "GPU, CPU, almacenamiento y chasis: una base equilibrada para empezar a construir.",
+      "cta": "Ver todo el catálogo"
+    },
+    "deals": {
+      "kicker": "03 · Ofertas",
+      "title": "Precios que no esperan",
+      "body": "Descuentos activos sobre stock disponible. El contador se reinicia cada domingo.",
+      "countdownLabel": "Termina en",
+      "days": "días",
+      "hours": "hrs",
+      "minutes": "min",
+      "seconds": "seg",
+      "cta": "Ver todas las ofertas"
+    },
+    "guides": {
+      "kicker": "04 · Aprender",
+      "title": "Compra con criterio",
+      "body": "Guías cortas para entender qué importa de verdad en cada componente.",
+      "cta": "Ver todas las guías",
+      "items": {
+        "gpu": {
+          "title": "Cómo elegir tu GPU",
+          "description": "VRAM, bus y consumo: lo que sí cambia la experiencia.",
+          "tag": "6 min"
+        },
+        "ram": {
+          "title": "DDR5 sin mitos",
+          "description": "Velocidad, latencia y por qué el kit correcto importa más que el número grande.",
+          "tag": "5 min"
+        },
+        "build": {
+          "title": "Tu primer build en 8 pasos",
+          "description": "Del socket al cable management, en orden y sin sustos.",
+          "tag": "9 min"
+        }
+      }
+    },
+    "reviews": {
+      "kicker": "05 · Confianza",
+      "title": "Builds que ya están funcionando",
+      "body": "Opiniones de clientes que montaron con nosotros.",
+      "items": {
+        "one": {
+          "quote": "Pedí CPU, placa y RAM el mismo día y llegó todo en 72 horas, perfectamente embalado.",
+          "name": "Diego M.",
+          "role": "Editor de vídeo · CDMX"
+        },
+        "two": {
+          "quote": "El soporte me ayudó a elegir la fuente por consumo real, no por marketing.",
+          "name": "Lucía R.",
+          "role": "Desarrolladora · Madrid"
+        },
+        "three": {
+          "quote": "Tercera build que compro aquí. Precios claros y cero sorpresas en aduana.",
+          "name": "Andrés P.",
+          "role": "Streamer · Bogotá"
+        }
+      }
+    },
+    "newsletter": {
+      "kicker": "06 · Lista",
+      "title": "Ofertas antes que nadie",
+      "body": "Un correo al mes con drops, descuentos reales y guías. Nada más.",
+      "placeholder": "tu@correo.com",
+      "cta": "Suscribirme",
+      "success": "Listo. Te avisamos en la próxima oferta.",
+      "privacy": "Sin spam. Baja cuando quieras.",
+      "error": "Escribe un correo válido.",
+      "emailLabel": "Correo electrónico"
+    }
+  },
+  "catalog": {
+    "kicker": "Catálogo",
+    "title": "Todo el hardware",
+    "body": "Productos demo con especificaciones completas. Filtra por marca, disponibilidad y precio; la URL guarda tu selección para compartirla.",
+    "searchLabel": "Buscar en el catálogo",
+    "searchPlaceholder": "Buscar por nombre o marca…",
+    "filters": "Filtros",
+    "closeFilters": "Cerrar filtros",
+    "results": "{count, plural, =0 {Sin resultados} one {# producto} other {# productos}}",
+    "sort": "Ordenar",
+    "sortRelevance": "Relevancia",
+    "sortPriceAsc": "Precio: menor a mayor",
+    "sortPriceDesc": "Precio: mayor a menor",
+    "sortRating": "Mejor valorados",
+    "sortNew": "Novedades",
+    "category": "Categoría",
+    "allCategories": "Todas",
+    "brand": "Marca",
+    "availability": "Disponibilidad",
+    "inStockOnly": "Solo en stock",
+    "price": "Precio",
+    "priceAll": "Cualquier precio",
+    "priceUnder200": "Menos de $200",
+    "price200to500": "$200 – $500",
+    "price500to1000": "$500 – $1,000",
+    "priceOver1000": "Más de $1,000",
+    "clearFilters": "Limpiar filtros",
+    "activeFilters": "Filtros activos",
+    "removeFilter": "Quitar filtro: {filter}",
+    "empty": "Sin productos con estos filtros",
+    "emptyHint": "Prueba a quitar algún filtro o busca por otro nombre.",
+    "emptyCta": "Ver todo el catálogo",
+    "backToCatalog": "Todo el catálogo",
+    "categoryBody": {
+      "gpu": "GPUs para 1440p y 4K, con VRAM, bus y consumo a la vista.",
+      "cpu": "Procesadores para gaming, creación y trabajo pesado.",
+      "motherboard": "Placas con socket, chipset y formato claros desde el primer vistazo.",
+      "ram": "Kits DDR5 con capacidad, velocidad y latencia reales.",
+      "storage": "SSD NVMe rápidos para sistema, juegos y proyectos.",
+      "psu": "Fuentes con certificación, potencia y modularidad.",
+      "cases": "Chasis con flujo de aire y espacio para tu GPU.",
+      "monitors": "Pantallas con resolución, refresco y respuesta.",
+      "peripherals": "Teclados, ratones y audio para completar el setup.",
+      "cooling": "Refrigeración por aire y líquida, con ruido y RPM."
+    },
+    "dealsPage": {
+      "kicker": "Ofertas",
+      "title": "Ofertas activas",
+      "body": "Descuentos sobre stock disponible. Cuando se acaba la unidad, se acaba la oferta.",
+      "count": "{count, plural, one {# oferta activa} other {# ofertas activas}}",
+      "cta": "Ver todo el catálogo",
+      "empty": "Ahora mismo no hay ofertas activas.",
+      "emptyHint": "Vuelve el domingo: el contador se reinicia con nuevas rebajas."
+    },
+    "updating": "Actualizando…"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "intro": "Completa tus datos para finalizar el pedido.",
+    "demoBadge": "Demo",
+    "demoNote": "No se procesa ningún pago real ni se enviará nada.",
+    "step": "Paso {current} de {total}",
+    "steps": {
+      "contact": "Contacto",
+      "shipping": "Envío",
+      "payment": "Pago"
+    },
+    "contact": {
+      "title": "Datos de contacto",
+      "body": "Te enviamos la confirmación y el seguimiento del pedido.",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "name": "Nombre completo",
+      "namePlaceholder": "Ada Lovelace",
+      "phone": "Teléfono (opcional)",
+      "phonePlaceholder": "+1 555 000 0000"
+    },
+    "shipping": {
+      "title": "Dirección de envío",
+      "body": "Enviamos a todo el mundo. Los plazos son orientativos.",
+      "address": "Dirección",
+      "addressPlaceholder": "Calle, número, piso",
+      "city": "Ciudad",
+      "cityPlaceholder": "Ciudad",
+      "postal": "Código postal",
+      "postalPlaceholder": "00000",
+      "country": "País",
+      "countryPlaceholder": "Selecciona un país",
+      "method": "Método de envío",
+      "standard": "Estándar",
+      "standardEta": "5–8 días laborables",
+      "express": "Express",
+      "expressEta": "2–3 días laborables"
+    },
+    "payment": {
+      "title": "Pago",
+      "body": "Introduce una tarjeta de prueba. No se realiza ningún cargo.",
+      "card": "Número de tarjeta",
+      "cardPlaceholder": "4242 4242 4242 4242",
+      "holder": "Titular",
+      "holderPlaceholder": "Nombre en la tarjeta",
+      "expiry": "Caducidad",
+      "expiryPlaceholder": "MM/AA",
+      "cvc": "CVC",
+      "cvcPlaceholder": "123",
+      "cardLabel": "NEXUS · Demo",
+      "testCard": "Usa 4242 4242 4242 4242 con cualquier fecha futura."
+    },
+    "actions": {
+      "continue": "Continuar",
+      "back": "Volver",
+      "pay": "Pagar {amount}",
+      "processing": "Procesando…"
+    },
+    "summary": {
+      "title": "Tu pedido",
+      "edit": "Editar"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "email": "Introduce un email válido.",
+      "card": "Introduce los 16 dígitos de la tarjeta.",
+      "expiry": "Usa el formato MM/AA.",
+      "expiryPast": "La tarjeta está caducada.",
+      "cvc": "Introduce 3 dígitos."
+    },
+    "confirmation": {
+      "title": "Pedido confirmado",
+      "body": "Gracias, {name}. Te enviamos la confirmación a {email}.",
+      "order": "Pedido {id}",
+      "delivery": "Entrega estimada: {date}",
+      "keepShopping": "Seguir comprando",
+      "home": "Volver al inicio",
+      "note": "Pedido de demostración: no se ha cobrado nada ni se enviará nada."
+    },
+    "empty": {
+      "title": "Tu carrito está vacío",
+      "body": "Añade componentes o periféricos antes de finalizar la compra.",
+      "cta": "Ver catálogo"
+    }
+  },
+  "wishlist": {
+    "add": "Añadir a la lista de deseos",
+    "remove": "Quitar de la lista de deseos",
+    "saved": "En tu lista",
+    "addShort": "Guardar",
+    "savedShort": "Guardado"
+  },
+  "account": {
+    "title": "Mi cuenta",
+    "intro": "Tus pedidos, direcciones y lista de deseos, guardados solo en este navegador.",
+    "demoBadge": "Demo",
+    "profile": {
+      "guest": "Invitado",
+      "guestEmail": "Completa un pedido para guardar tus datos.",
+      "memberSince": "Cliente desde {date}",
+      "orders": "Pedidos",
+      "wishlist": "Deseos"
+    },
+    "orders": {
+      "title": "Pedidos",
+      "empty": "Todavía no hay pedidos",
+      "emptyBody": "Cuando completes el checkout de demostración, el pedido aparecerá aquí.",
+      "cta": "Ver catálogo",
+      "statusConfirmed": "Confirmado",
+      "items": "{count, plural, one {# artículo} other {# artículos}}",
+      "delivery": "Entrega estimada: {date}",
+      "shipTo": "Envío a",
+      "id": "Pedido {id}"
+    },
+    "address": {
+      "title": "Dirección de envío",
+      "empty": "Se guarda al completar tu primer pedido.",
+      "recipient": "Recibe"
+    },
+    "wishlist": {
+      "title": "Lista de deseos",
+      "empty": "Tu lista está vacía",
+      "emptyBody": "Toca el corazón de cualquier producto para guardarlo aquí.",
+      "emptyCta": "Explorar productos",
+      "count": "{count, plural, =0 {Sin productos} one {# producto} other {# productos}}",
+      "remove": "Quitar {name} de la lista",
+      "addToCart": "Añadir al carrito"
+    },
+    "data": {
+      "title": "Datos de demostración",
+      "body": "Esta cuenta no tiene login: pedidos, dirección y deseos se guardan en este navegador.",
+      "clear": "Borrar datos",
+      "confirm": "Confirmar borrado",
+      "cleared": "Datos borrados."
+    }
+  },
+  "compare": {
+    "title": "Comparar",
+    "intro": "Elige hasta cuatro productos y revisa las diferencias lado a lado.",
+    "slot": "Producto {number}",
+    "addPlaceholder": "Añadir producto",
+    "remove": "Quitar {name} de la comparación",
+    "viewProduct": "Ver ficha",
+    "emptyTitle": "Tu comparación está vacía",
+    "emptyBody": "Añade productos en los huecos de arriba o empieza con una de estas comparaciones.",
+    "presetsTitle": "Empieza con una comparación",
+    "presetGpu": "GPUs de gama alta",
+    "presetCpu": "CPUs para gaming",
+    "presetSsd": "SSD NVMe de 2 TB",
+    "needTwo": "Añade otro producto para ver la tabla de diferencias.",
+    "tableLabel": "Comparación de productos",
+    "price": "Precio",
+    "rating": "Valoración",
+    "stock": "Stock",
+    "specs": "Especificaciones",
+    "differencesNote": "Las filas resaltadas tienen valores distintos.",
+    "bestPrice": "Mejor precio",
+    "clear": "Limpiar comparación",
+    "cta": "Comparar con otros",
+    "browse": "Ver catálogo",
+    "swipe": "Desliza para ver todas las columnas"
+  },
+  "guides": {
+    "title": "Guías",
+    "kicker": "Aprender",
+    "intro": "Guías cortas y directas para elegir componentes con criterio: qué mirar, qué ignorar y cuánto gastar.",
+    "count": "{count, plural, one {# guía} other {# guías}}",
+    "featured": "Guía destacada",
+    "readTime": "{minutes} min",
+    "level": {
+      "entry": "Principiante",
+      "mid": "Intermedio",
+      "high": "Avanzado"
+    },
+    "read": "Leer guía",
+    "back": "Todas las guías",
+    "toc": "En esta guía",
+    "takeaway": "En resumen",
+    "products": "Productos de esta guía",
+    "compareThem": "Comparar estos productos",
+    "related": "Sigue leyendo",
+    "published": "Publicado el {date}",
+    "ctaTitle": "¿Prefieres verlos lado a lado?",
+    "ctaBody": "El comparador pone hasta cuatro componentes frente a frente y resalta las diferencias.",
+    "ctaButton": "Abrir comparador"
+  },
+  "support": {
+    "title": "Soporte",
+    "kicker": "Estamos aquí",
+    "intro": "Respuestas claras sobre envíos, devoluciones, garantía y pedidos. Sin laberintos.",
+    "status": "Todos los sistemas operativos",
+    "demo": "Demo: los pedidos y el formulario son simulados.",
+    "quick": {
+      "orders": "Pedidos",
+      "shipping": "Envíos",
+      "returns": "Devoluciones",
+      "warranty": "Garantía"
+    },
+    "track": {
+      "title": "Seguimiento de pedido",
+      "body": "Tus pedidos de demostración viven en tu cuenta, solo en este navegador.",
+      "cta": "Ver mis pedidos"
+    },
+    "policies": {
+      "shipping": {
+        "title": "Envíos"
+      },
+      "returns": {
+        "title": "Devoluciones"
+      },
+      "warranty": {
+        "title": "Garantía"
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "body": "Lo que más nos preguntan, sin rodeos.",
+      "groups": {
+        "orders": "Pedidos y envíos",
+        "returns": "Devoluciones y garantía",
+        "payments": "Pagos y seguridad"
+      }
+    },
+    "form": {
+      "title": "Escríbenos",
+      "body": "Cuéntanos qué pasa y te respondemos en un día hábil.",
+      "name": "Nombre",
+      "email": "Email",
+      "topic": "Motivo",
+      "order": "Número de pedido",
+      "orderHint": "Opcional, si ya compraste.",
+      "message": "Mensaje",
+      "messageHint": "Incluye modelo y síntomas si es un problema técnico.",
+      "topics": {
+        "order": "Estado de un pedido",
+        "shipping": "Envío",
+        "returns": "Devolución",
+        "warranty": "Garantía o RMA",
+        "product": "Duda de producto",
+        "other": "Otro"
+      },
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "successTitle": "Mensaje recibido",
+      "successBody": "Te responderemos a {email} en un día hábil. Referencia: {ref}",
+      "again": "Enviar otro mensaje",
+      "required": "Completa este campo.",
+      "emailInvalid": "Escribe un email válido.",
+      "messageShort": "Cuéntanos un poco más (mínimo 10 caracteres).",
+      "nameShort": "Escribe tu nombre.",
+      "errorTitle": "Revisa los campos marcados."
+    },
+    "contact": {
+      "email": "soporte@nexuspc.demo",
+      "hours": "Lun–Vie · 9:00–18:00 (UTC−6)",
+      "response": "Respuesta en menos de 24 h"
+    },
+    "still": {
+      "title": "¿No encuentras tu respuesta?",
+      "body": "Escríbenos y te contesta una persona, no un bot.",
+      "cta": "Ir al formulario"
+    },
+    "quickLabel": "Accesos rápidos"
+  },
+  "notFound": {
+    "kicker": "Error 404",
+    "title": "Esta página se perdió en el vacío.",
+    "body": "El enlace está roto o el producto ya no existe. Vuelve al inicio o sigue explorando el catálogo.",
+    "home": "Volver al inicio",
+    "shop": "Ver la tienda",
+    "hint": "Si llegaste desde un enlace nuestro, avísanos en Soporte."
+  }
+}
