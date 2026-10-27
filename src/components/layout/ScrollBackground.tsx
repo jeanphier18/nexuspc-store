@@ -14,12 +14,11 @@ type Particle = {
 
 /**
  * Fondo reactivo al scroll y al puntero.
- * Tres capas: glows radiales (CSS), rejilla técnica (CSS) y campo de partículas (canvas 2D).
+ * Capas: glows radiales (CSS), grano fino (CSS) y campo de partículas (canvas 2D).
  * Sin WebGL para mantener el coste bajo. Respeta prefers-reduced-motion.
  */
 export function ScrollBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const gridRef = useRef<HTMLDivElement | null>(null);
   const glowARef = useRef<HTMLDivElement | null>(null);
   const glowBRef = useRef<HTMLDivElement | null>(null);
 
@@ -113,9 +112,6 @@ export function ScrollBackground() {
       const progress =
         docHeight > height ? scroll / (docHeight - height) : 0;
 
-      if (gridRef.current) {
-        gridRef.current.style.transform = `translate3d(${(pointerX * 14).toFixed(2)}px, ${(-scroll * 0.16).toFixed(2)}px, 0)`;
-      }
       if (glowARef.current) {
         glowARef.current.style.transform = `translate3d(${(pointerX * -34).toFixed(2)}px, ${(progress * 220 + pointerY * -30).toFixed(2)}px, 0)`;
       }
@@ -213,14 +209,11 @@ export function ScrollBackground() {
         }}
       />
 
-      {/* Rejilla técnica en parallax */}
-      <div
-        ref={gridRef}
-        className="absolute inset-[-20%] tech-grid opacity-80 will-change-transform"
-      />
-
       {/* Partículas */}
       <canvas ref={canvasRef} className="absolute inset-0" />
+
+      {/* Grano fino estático: profundidad sin competir con el contenido */}
+      <div className="film-grain absolute inset-0 opacity-[0.028]" />
 
       {/* Viñeta superior y fundido inferior para legibilidad */}
       <div className="absolute inset-0 tech-vignette" />

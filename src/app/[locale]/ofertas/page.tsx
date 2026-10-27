@@ -2,8 +2,10 @@ import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DealCountdown } from "@/components/home/DealCountdown";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { buttonVariants } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { getDiscountedProducts } from "@/data/catalog";
 import { Link } from "@/i18n/navigation";
 import { discountPercent } from "@/lib/format";
@@ -43,7 +45,29 @@ export default async function DealsPage({
     );
 
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+    <main className="relative isolate mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+      <BackgroundArt
+        items={[
+          {
+            id: "deals-gpu",
+            src: "/products/gpu-9070-b.webp",
+            label: "RADEON",
+            side: "right",
+            top: "5%",
+            depth: 0.8,
+            width: "clamp(180px, 13vw, 220px)",
+          },
+          {
+            id: "deals-keyboard",
+            src: "/products/keyboard-b.webp",
+            label: "75% MECH",
+            side: "left",
+            top: "56%",
+            depth: 1.2,
+            width: "clamp(170px, 12vw, 210px)",
+          },
+        ]}
+      />
       <header className="flex flex-col gap-8 border-b border-line/70 pb-8 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <p className="eyebrow">{t("dealsPage.kicker")}</p>
@@ -64,15 +88,17 @@ export default async function DealsPage({
       </header>
 
       {deals.length ? (
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {deals.map((product) => (
-            <ProductCard
-              key={product.slug}
-              product={product}
-              locale={locale}
-            />
-          ))}
-        </div>
+        <Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {deals.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </Reveal>
       ) : (
         <div className="mt-8 rounded-card border border-line bg-surface/40 px-6 py-16 text-center">
           <p className="font-display text-lg">{t("dealsPage.empty")}</p>

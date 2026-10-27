@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   ArrowRight,
   Minus,
@@ -16,6 +17,7 @@ import { Badge } from "@/components/ui/Badge";
 import { buttonVariants } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { getProduct } from "@/data/catalog";
+import { getProductImage } from "@/data/product-images";
 import { Link } from "@/i18n/navigation";
 import { MAX_QTY, selectCount, selectSubtotalCents, useCartStore } from "@/lib/cart";
 import { FREE_SHIPPING_CENTS, missingForFreeShipping } from "@/lib/checkout";
@@ -112,6 +114,7 @@ export function CartView() {
                     MAX_QTY,
                     product.unitsLeft ?? MAX_QTY,
                   );
+                  const image = getProductImage(product);
 
                   return (
                     <li
@@ -122,19 +125,19 @@ export function CartView() {
                         href={`/producto/${product.slug}`}
                         tabIndex={-1}
                         aria-hidden="true"
-                        className="tech-grid relative flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-line bg-surface-2/50 transition-colors hover:border-line-strong"
+                        className="relative flex size-20 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-line bg-surface-2/50 transition-colors hover:border-line-strong"
                       >
+                        <Image
+                          src={image.src}
+                          alt=""
+                          fill
+                          sizes="80px"
+                          className="object-cover"
+                        />
                         <span
                           aria-hidden="true"
-                          className="absolute inset-0"
-                          style={{
-                            background:
-                              "radial-gradient(70px circle at 50% 115%, rgba(124,58,237,0.35), transparent 70%)",
-                          }}
+                          className="absolute inset-0 shadow-[inset_0_0_20px_rgba(7,7,13,0.35)]"
                         />
-                        <span className="relative px-1 text-center font-mono text-[8px] uppercase leading-tight tracking-[0.14em] text-foreground/35">
-                          {product.brand}
-                        </span>
                       </Link>
 
                       <div className="min-w-0 flex-1">

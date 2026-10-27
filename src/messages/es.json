@@ -57,7 +57,8 @@
       "returns": "Devoluciones",
       "warranty": "Garantía",
       "about": "Sobre nosotros",
-      "account": "Mi cuenta"
+      "account": "Mi cuenta",
+      "credits": "Créditos de imagen"
     },
     "trust": {
       "shipping": "Envío internacional asegurado",
@@ -607,6 +608,48 @@
       "cta": "Ir al formulario"
     },
     "quickLabel": "Accesos rápidos"
+  },
+  "search": {
+    "open": "Buscar en el catálogo",
+    "title": "Buscar productos",
+    "eyebrow": "Buscador",
+    "pageTitle": "Encuentra tu componente",
+    "pageBody": "Busca por nombre, marca o especificación. Los resultados se actualizan mientras escribes.",
+    "formLabel": "Buscar productos",
+    "submit": "Buscar",
+    "placeholder": "GPU, Ryzen, DDR5, monitor 4K…",
+    "resultsLabel": "Resultados de búsqueda",
+    "resultsCount": "{count, plural, =0 {Sin resultados para “{query}”} one {# resultado para “{query}”} other {# resultados para “{query}”}}",
+    "noResults": "No encontramos nada con ese nombre",
+    "noResultsHint": "Prueba con una marca, una categoría o una especificación como “32 GB”.",
+    "emptyHint": "Escribe al menos dos caracteres o prueba con una marca o categoría.",
+    "examples": "Prueba: RTX 5090 · Ryzen 7 · DDR5 · SSD 2 TB",
+    "viewAll": "Ver todos los resultados",
+    "hint": "↑ ↓ para navegar · Enter para abrir · Esc para cerrar",
+    "close": "Cerrar búsqueda",
+    "new": "Nuevo"
+  },
+  "gallery": {
+    "label": "Galería de {name}",
+    "mainImage": "Imagen",
+    "thumbnail": "Ver imagen",
+    "zoom": "Ampliar imagen",
+    "previous": "Imagen anterior",
+    "next": "Imagen siguiente",
+    "close": "Cerrar galería",
+    "photoNote": "Fotografía ilustrativa"
+  },
+  "credits": {
+    "title": "Créditos de imagen",
+    "eyebrow": "Transparencia",
+    "intro": "Las fotografías de producto son imágenes de archivo con licencias Creative Commons o de dominio público. Cada ficha indica el autor y la licencia original.",
+    "body": "Los nombres y logotipos de productos pertenecen a sus respectivos fabricantes. Las imágenes son ilustrativas y pueden no coincidir con la versión exacta del producto.",
+    "licenseLabel": "Licencia",
+    "sourceLabel": "Fuente original",
+    "creatorLabel": "Autor",
+    "imagesCount": "{count, plural, one {# fotografía} other {# fotografías}}",
+    "back": "Volver al catálogo",
+    "empty": "Todavía no hay imágenes registradas."
   },
   "notFound": {
     "kicker": "Error 404",

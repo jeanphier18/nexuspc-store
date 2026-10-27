@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CatalogLayout } from "@/components/catalog/CatalogLayout";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { categories } from "@/config/nav";
 import { getProductsByCategory, products } from "@/data/catalog";
@@ -50,7 +51,29 @@ export default async function CatalogPage({
   }));
 
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+    <main className="relative isolate mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+      <BackgroundArt
+        items={[
+          {
+            id: "catalog-motherboard",
+            src: "/products/mobo-msi-a.webp",
+            label: "X870E",
+            side: "right",
+            top: "4%",
+            depth: 0.75,
+            width: "clamp(180px, 13vw, 220px)",
+          },
+          {
+            id: "catalog-ssd",
+            src: "/products/ssd-sn850-a.webp",
+            label: "NVMe",
+            side: "left",
+            top: "58%",
+            depth: 1.25,
+            width: "clamp(170px, 12vw, 210px)",
+          },
+        ]}
+      />
       <header className="max-w-2xl">
         <p className="eyebrow">{t("kicker")}</p>
         <h1 className="mt-4 font-display text-[clamp(2.25rem,5vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em]">

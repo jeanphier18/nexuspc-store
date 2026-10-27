@@ -97,7 +97,7 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
       className={`${unbounded.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen bg-background text-foreground antialiased">
+      <body className="min-h-screen overflow-x-clip bg-background text-foreground antialiased">
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-on-accent"

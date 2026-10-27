@@ -59,5 +59,6 @@ export const footerLinks = {
   company: [
     { key: "about", href: "/soporte" },
     { key: "account", href: "/cuenta" },
+    { key: "credits", href: "/creditos" },
   ],
 } as const;

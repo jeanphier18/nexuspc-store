@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { CartBadge } from "@/components/cart/CartBadge";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import { SearchDialog } from "@/components/search/SearchDialog";
 import { buttonVariants } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { categoryIcons } from "@/config/category-icons";
@@ -253,6 +254,8 @@ export function Header() {
           </nav>
 
           <div className="ml-auto flex items-center gap-1.5">
+            <SearchDialog />
+
             <LocaleSwitcher
               label={t("language")}
               className="hidden sm:flex"

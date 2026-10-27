@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { GuideCard } from "@/components/guides/GuideCard";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Badge } from "@/components/ui/Badge";
 import { buttonVariants } from "@/components/ui/Button";
 import { categoryIcons } from "@/config/category-icons";
 import { getProduct } from "@/data/catalog";
+import { getProductImage } from "@/data/product-images";
 import { getGuide, getRelatedGuides, guides, type Guide } from "@/data/guides";
 import { Link } from "@/i18n/navigation";
 import { compareHref } from "@/lib/compare";
@@ -81,6 +83,7 @@ export default async function GuidePage({
     .map((productSlug) => getProduct(productSlug))
     .filter((product) => product !== undefined);
   const href = compareHref(guide.products);
+  const artImage = recommended[0] ? getProductImage(recommended[0]) : null;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -94,7 +97,22 @@ export default async function GuidePage({
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pt-10">
+    <main className="relative isolate mx-auto max-w-6xl px-5 pb-24 pt-8 sm:px-8 sm:pt-10">
+      {artImage ? (
+        <BackgroundArt
+          items={[
+            {
+              id: `guide-${guide.slug}`,
+              src: artImage.src,
+              label: `${guide.category.toUpperCase()} · GUIDE`,
+              side: "right",
+              top: "6%",
+              depth: 1,
+              width: "clamp(160px, 11vw, 190px)",
+            },
+          ]}
+        />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

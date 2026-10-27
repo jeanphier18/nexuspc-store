@@ -2,11 +2,13 @@ import { ArrowRight, Check, Scale } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { ProductMedia } from "@/components/product/ProductMedia";
 import { ProductPurchase } from "@/components/product/ProductPurchase";
 import { Stars } from "@/components/product/Stars";
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 import { categories } from "@/config/nav";
 import { COMPAT_KEYS } from "@/config/product-compat";
 import {
@@ -14,8 +16,10 @@ import {
   getRelatedProducts,
   type ProductSpec,
 } from "@/data/catalog";
+import { getProductImage, getProductImages } from "@/data/product-images";
 import { Link } from "@/i18n/navigation";
 import { alternatesFor } from "@/lib/metadata";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -36,13 +40,38 @@ export async function generateMetadata({
     .slice(0, 3)
     .map((spec) => `${specT(spec.key)}: ${spec.value}`)
     .join(" · ");
+  const description = `${product.brand} · ${navT(
+    `categories.${product.category}`,
+  )}. ${summary}`;
+  const image = getProductImage(product);
+  const url = `${SITE_URL}/${locale}/producto/${product.slug}`;
+  const ogImage = `${SITE_URL}${image.og}`;
 
   return {
     title: product.name,
-    description: `${product.brand} · ${navT(
-      `categories.${product.category}`,
-    )}. ${summary}`,
+    description,
     alternates: alternatesFor(locale, `/producto/${product.slug}`),
+    openGraph: {
+      type: "website",
+      title: `${product.name} — ${SITE_NAME}`,
+      description,
+      url,
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${product.name} — ${product.brand}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} — ${SITE_NAME}`,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -95,9 +124,100 @@ export default async function ProductPage({ params }: PageProps) {
   const related = getRelatedProducts(product, 4);
   const compat = compatibilitySpecs(product.specs, COMPAT_KEYS[product.category]);
   const distribution = ratingDistribution(product.rating);
+  const productImages = getProductImages(product);
+  const productUrl = `${SITE_URL}/${locale}/producto/${product.slug}`;
+  const availability =
+    product.stock === "out"
+      ? "https://schema.org/OutOfStock"
+      : product.stock === "low"
+        ? "https://schema.org/LimitedAvailability"
+        : "https://schema.org/InStock";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${productUrl}#product`,
+        name: product.name,
+        image: productImages.map((image) => `${SITE_URL}${image.src}`),
+        description: `${product.name} de ${product.brand}. ${product.specs
+          .slice(0, 3)
+          .map((spec) => `${specT(spec.key)}: ${spec.value}`)
+          .join(". ")}.`,
+        sku: product.slug,
+        category: categoryLabel,
+        brand: { "@type": "Brand", name: product.brand },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: product.rating,
+          reviewCount: product.reviews,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        offers: {
+          "@type": "Offer",
+          url: productUrl,
+          priceCurrency: "USD",
+          price: (product.priceCents / 100).toFixed(2),
+          availability,
+          itemCondition: "https://schema.org/NewCondition",
+          seller: { "@type": "Organization", name: SITE_NAME },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: navT("home"),
+            item: `${SITE_URL}/${locale}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: navT("shop"),
+            item: `${SITE_URL}/${locale}/tienda`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: categoryLabel,
+            item: `${SITE_URL}/${locale}/tienda/${category.slug}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: product.name,
+            item: productUrl,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-24 pt-8 sm:px-8 sm:pt-10">
+    <main className="relative isolate mx-auto max-w-7xl px-5 pb-24 pt-8 sm:px-8 sm:pt-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <BackgroundArt
+        items={[
+          {
+            id: `product-${product.slug}`,
+            src: productImages[1]?.src ?? productImages[0].src,
+            label: `${product.brand}`,
+            side: "right",
+            top: "3%",
+            depth: 0.9,
+            width: "clamp(170px, 12vw, 210px)",
+          },
+        ]}
+      />
       <nav
         aria-label="Breadcrumb"
         className="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-faint"
@@ -330,11 +450,13 @@ export default async function ProductPage({ params }: PageProps) {
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {related.map((item) => (
-            <ProductCard key={item.slug} product={item} locale={locale} />
-          ))}
-        </div>
+        <Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {related.map((item) => (
+              <ProductCard key={item.slug} product={item} locale={locale} />
+            ))}
+          </div>
+        </Reveal>
       </section>
     </main>
   );

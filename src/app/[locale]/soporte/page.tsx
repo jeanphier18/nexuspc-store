@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { SupportForm } from "@/components/support/SupportForm";
 import { buttonVariants } from "@/components/ui/Button";
 import { faq, faqTopics, policies } from "@/data/support";
@@ -61,7 +62,29 @@ export default async function SupportPage({
   ];
 
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+    <main className="relative isolate mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+      <BackgroundArt
+        items={[
+          {
+            id: "support-headset",
+            src: "/products/headset-a.webp",
+            label: "AUDIO",
+            side: "right",
+            top: "7%",
+            depth: 0.9,
+            width: "clamp(180px, 13vw, 220px)",
+          },
+          {
+            id: "support-monitor",
+            src: "/products/monitor-lg-b.webp",
+            label: "DISPLAY",
+            side: "left",
+            top: "64%",
+            depth: 1.2,
+            width: "clamp(170px, 12vw, 210px)",
+          },
+        ]}
+      />
       <header className="max-w-2xl">
         <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">
           {t("kicker")}

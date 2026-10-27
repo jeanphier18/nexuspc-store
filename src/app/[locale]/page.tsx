@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -11,18 +12,21 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { DealCountdown } from "@/components/home/DealCountdown";
 import { NewsletterForm } from "@/components/home/NewsletterForm";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { Stars } from "@/components/product/Stars";
 import { AddToCartButton } from "@/components/cart/AddToCartButton";
 import { Badge } from "@/components/ui/Badge";
 import { buttonVariants } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import {
   getDiscountedProducts,
   getFeaturedProducts,
   getProduct,
 } from "@/data/catalog";
+import { getProductImage } from "@/data/product-images";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import { formatPrice } from "@/lib/format";
@@ -56,6 +60,7 @@ export default async function HomePage({
   const footerT = await getTranslations("footer");
 
   const heroProduct = getProduct("nvidia-rtx-5090");
+  const heroImage = heroProduct ? getProductImage(heroProduct) : null;
   const featured = getFeaturedProducts();
   const deals = getDiscountedProducts()
     .filter(
@@ -76,7 +81,48 @@ export default async function HomePage({
   const reviews = ["one", "two", "three"] as const;
 
   return (
-    <main>
+    <main className="relative isolate">
+      <BackgroundArt
+        bleed
+        items={[
+          {
+            id: "home-gpu",
+            src: "/products/gpu-5090-a.webp",
+            label: "RTX 5090",
+            side: "right",
+            top: "6%",
+            depth: 0.55,
+            width: "clamp(200px, 15vw, 250px)",
+          },
+          {
+            id: "home-cpu",
+            src: "/products/cpu-9800-a.webp",
+            label: "RYZEN 7",
+            side: "left",
+            top: "24%",
+            depth: 1.15,
+            width: "clamp(180px, 13vw, 220px)",
+          },
+          {
+            id: "home-ram",
+            src: "/products/ram-trident-a.webp",
+            label: "DDR5",
+            side: "right",
+            top: "47%",
+            depth: 0.8,
+            width: "clamp(180px, 13vw, 220px)",
+          },
+          {
+            id: "home-keyboard",
+            src: "/products/keyboard-a.webp",
+            label: "Q1 PRO",
+            side: "left",
+            top: "69%",
+            depth: 1.35,
+            width: "clamp(200px, 15vw, 250px)",
+          },
+        ]}
+      />
       {/* ---------------------------------------------------------------- Hero */}
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-16">
         <div className="grid gap-10 xl:grid-cols-[1.3fr_0.7fr] xl:items-center xl:gap-14">
@@ -135,21 +181,32 @@ export default async function HomePage({
                   </Badge>
                 </div>
 
-                <div className="relative mt-4 flex h-44 flex-col items-center justify-center overflow-hidden rounded-md border border-line/70 bg-surface-2/50">
+                <div className="relative mt-4 aspect-[16/10] overflow-hidden rounded-md border border-line/70 bg-surface-2/50">
+                  <Image
+                    src={heroImage?.src ?? "/og.png"}
+                    alt={heroImage?.alt ?? heroProduct.name}
+                    fill
+                    priority
+                    sizes="(min-width: 1280px) 480px, 90vw"
+                    className="object-cover"
+                  />
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "radial-gradient(300px circle at 50% 130%, rgba(0,229,255,0.22), transparent 70%), radial-gradient(280px circle at 15% 0%, rgba(124,58,237,0.28), transparent 70%)",
-                    }}
+                    className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/10"
                   />
-                  <p className="relative font-display text-3xl tracking-tight text-foreground/85">
-                    {heroProduct.specs[0]?.value}
-                  </p>
-                  <p className="relative mt-2 font-mono text-[10px] uppercase tracking-[0.22em] text-faint">
-                    {heroProduct.brand}
-                  </p>
+                  <div className="absolute inset-x-3 bottom-3 flex items-end justify-between gap-3">
+                    <div>
+                      <p className="font-display text-xl tracking-tight text-foreground/90">
+                        {heroProduct.specs[0]?.value}
+                      </p>
+                      <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.22em] text-faint">
+                        {heroProduct.brand}
+                      </p>
+                    </div>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-foreground/60">
+                      {t("hero.featuredLabel")}
+                    </span>
+                  </div>
                 </div>
 
                 <h2 className="mt-4 font-display text-xl leading-snug">
@@ -208,7 +265,9 @@ export default async function HomePage({
         title={t("categories.title")}
         body={t("categories.body")}
       >
-        <CategoryGrid />
+        <Reveal>
+          <CategoryGrid />
+        </Reveal>
       </Section>
 
       {/* -------------------------------------------------------------- Featured */}
@@ -217,15 +276,17 @@ export default async function HomePage({
         title={t("featured.title")}
         body={t("featured.body")}
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((product) => (
-            <ProductCard
-              key={product.slug}
-              product={product}
-              locale={locale}
-            />
-          ))}
-        </div>
+        <Reveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </Reveal>
 
         <div className="mt-8 flex justify-end">
           <Link
@@ -245,15 +306,17 @@ export default async function HomePage({
         body={t("deals.body")}
         aside={<DealCountdown />}
       >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {deals.map((product) => (
-            <ProductCard
-              key={product.slug}
-              product={product}
-              locale={locale}
-            />
-          ))}
-        </div>
+        <Reveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {deals.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                locale={locale}
+              />
+            ))}
+          </div>
+        </Reveal>
 
         <div className="mt-8 flex justify-end">
           <Link
@@ -272,31 +335,33 @@ export default async function HomePage({
         title={t("guides.title")}
         body={t("guides.body")}
       >
-        <div className="grid gap-3 md:grid-cols-3">
-          {guides.map((key) => (
-            <Link
-              key={key}
-              href="/guias"
-              className="group flex flex-col rounded-card border border-line bg-surface/60 p-6 backdrop-blur-sm transition-colors duration-base hover:border-line-strong"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
-                  {t(`guides.items.${key}.tag`)}
-                </span>
-                <ArrowUpRight
-                  aria-hidden="true"
-                  className="size-4 text-faint transition-colors duration-base group-hover:text-accent"
-                />
-              </div>
-              <h3 className="mt-6 font-display text-lg leading-tight">
-                {t(`guides.items.${key}.title`)}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {t(`guides.items.${key}.description`)}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <Reveal>
+          <div className="grid gap-3 md:grid-cols-3">
+            {guides.map((key) => (
+              <Link
+                key={key}
+                href="/guias"
+                className="group flex flex-col rounded-card border border-line bg-surface/60 p-6 backdrop-blur-sm transition-colors duration-base hover:border-line-strong"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+                    {t(`guides.items.${key}.tag`)}
+                  </span>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-4 text-faint transition-colors duration-base group-hover:text-accent"
+                  />
+                </div>
+                <h3 className="mt-6 font-display text-lg leading-tight">
+                  {t(`guides.items.${key}.title`)}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {t(`guides.items.${key}.description`)}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </Reveal>
 
         <div className="mt-8 flex justify-end">
           <Link
@@ -315,24 +380,26 @@ export default async function HomePage({
         title={t("reviews.title")}
         body={t("reviews.body")}
       >
-        <div className="grid gap-3 md:grid-cols-3">
-          {reviews.map((key) => (
-            <Card key={key} className="flex flex-col p-6">
-              <Stars rating={5} />
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted">
-                “{t(`reviews.items.${key}.quote`)}”
-              </blockquote>
-              <div className="mt-6 border-t border-line pt-4">
-                <p className="font-display text-sm">
-                  {t(`reviews.items.${key}.name`)}
-                </p>
-                <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
-                  {t(`reviews.items.${key}.role`)}
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
+        <Reveal>
+          <div className="grid gap-3 md:grid-cols-3">
+            {reviews.map((key) => (
+              <Card key={key} className="flex flex-col p-6">
+                <Stars rating={5} />
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-muted">
+                  “{t(`reviews.items.${key}.quote`)}”
+                </blockquote>
+                <div className="mt-6 border-t border-line pt-4">
+                  <p className="font-display text-sm">
+                    {t(`reviews.items.${key}.name`)}
+                  </p>
+                  <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-faint">
+                    {t(`reviews.items.${key}.role`)}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Reveal>
       </Section>
 
       {/* ------------------------------------------------------------ Newsletter */}

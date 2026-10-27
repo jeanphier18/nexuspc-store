@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AddToCartButton } from "@/components/cart/AddToCartButton";
 import { Stars } from "@/components/product/Stars";
@@ -5,6 +6,7 @@ import { WishlistButton } from "@/components/wishlist/WishlistButton";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import type { Product } from "@/data/catalog";
+import { getProductImage } from "@/data/product-images";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import { discountPercent, formatCount, formatPrice } from "@/lib/format";
@@ -38,6 +40,7 @@ export async function ProductCard({
     product.priceCents,
     product.compareAtCents,
   );
+  const image = getProductImage(product);
   const href = `/producto/${product.slug}`;
   const meta = product.specs
     .slice(0, 2)
@@ -62,18 +65,22 @@ export async function ProductCard({
           aria-hidden="true"
           className="block overflow-hidden rounded-md border border-line/70 bg-surface-2/50 transition-colors duration-fast hover:border-line-strong"
         >
-          <span className="relative flex h-40 items-center justify-center sm:h-32">
+          <span className="relative block aspect-[4/3] w-full overflow-hidden">
+            <Image
+              src={image.src}
+              alt=""
+              fill
+              sizes="(min-width: 1280px) 300px, (min-width: 768px) 33vw, 100vw"
+              className="object-cover transition-transform duration-slow group-hover:scale-[1.045]"
+            />
             <span
               aria-hidden="true"
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(240px circle at 50% 120%, rgba(124,58,237,0.28), transparent 70%)",
-              }}
+              className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/5"
             />
-            <span className="relative px-4 font-mono text-sm uppercase tracking-[0.22em] text-foreground/30">
-              {product.brand}
-            </span>
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 shadow-[inset_0_0_50px_rgba(7,7,13,0.28)]"
+            />
           </span>
         </Link>
 

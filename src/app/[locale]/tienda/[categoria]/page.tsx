@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { CatalogLayout } from "@/components/catalog/CatalogLayout";
+import { BackgroundArt } from "@/components/layout/BackgroundArt";
 import { ProductCard } from "@/components/product/ProductCard";
 import { categoryIcons } from "@/config/category-icons";
 import { categories } from "@/config/nav";
 import { getProductsByCategory, products } from "@/data/catalog";
+import { getProductImage } from "@/data/product-images";
 import { Link } from "@/i18n/navigation";
 import {
   applyCatalogQuery,
@@ -66,9 +68,26 @@ export default async function CategoryPage({
   }));
 
   const label = navT(`categories.${category.key}`);
+  const firstProduct = categoryProducts[0];
+  const artImage = firstProduct ? getProductImage(firstProduct) : null;
 
   return (
-    <main className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+    <main className="relative isolate mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+      {artImage ? (
+        <BackgroundArt
+          items={[
+            {
+              id: `category-${category.key}`,
+              src: artImage.src,
+              label: category.key.toUpperCase(),
+              side: "right",
+              top: "3%",
+              depth: 0.85,
+              width: "clamp(180px, 13vw, 220px)",
+            },
+          ]}
+        />
+      ) : null}
       <header className="border-b border-line/70 pb-8">
         <nav
           aria-label="Breadcrumb"
